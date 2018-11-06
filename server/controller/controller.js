@@ -2,7 +2,7 @@ const axios = require("axios");
 let breweries = [];
 const getBrew = (req, res, next) => {
   axios.get("https://api.openbrewerydb.org/breweries").then(response => {
-    // console.log(response.data);
+    console.log(response);
     breweries = response.data;
     res.status(200).json(breweries);
   });
@@ -12,7 +12,7 @@ const addBrew = (req, res, next) => {
   // console.log(req.body);
   // console.log(breweries);
   let { name, brewery_type, address, state, city } = req.body;
-  console.log(breweries);
+//   console.log(breweries);
   breweries.push({
     name,
     address,
